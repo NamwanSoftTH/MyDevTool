@@ -1,6 +1,7 @@
 services:
   proxy:
     image: ubuntu/squid
+    container_name: squid
     ports:
       - "3128:3128"
     volumes:
