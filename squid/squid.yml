@@ -1,0 +1,9 @@
+services:
+  proxy:
+    image: ubuntu/squid
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./squid.conf:/etc/squid/squid.conf
+      - ./squid.passwords:/etc/squid/passwords
+    restart: always
