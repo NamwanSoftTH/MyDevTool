@@ -1,0 +1,11 @@
+services:
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - '6379:6379'
+    command: >
+      --requirepass 'Redis_PASS'
