@@ -1,0 +1,25 @@
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: MariaDB
+    restart: always
+    environment:
+      TZ: Asia/Bangkok
+      MARIADB_ROOT_PASSWORD: ''
+      MARIADB_ROOT_HOST: '%'
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_logs:/var/log/mysql
+      - mariadb_data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf:ro
+    command: --lower_case_table_names=1
+
+  phpmyadmin:
+    container_name: phpMyAdmin
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      PMA_HOST: mariadb
