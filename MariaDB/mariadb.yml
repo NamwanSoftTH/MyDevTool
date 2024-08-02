@@ -10,7 +10,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mariadb_logs:/var/log/mysql
+      - ./mariadb_logs:/var/log/mysql
       - mariadb_data:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf:ro
     command: --lower_case_table_names=1
