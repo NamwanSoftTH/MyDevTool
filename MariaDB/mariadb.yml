@@ -13,7 +13,6 @@ services:
       - mariadb_data:/var/lib/mysql
       - ./mariadb_logs:/var/log/mysql
       - ./my.cnf:/etc/mysql/my.cnf:ro
-    command: --lower_case_table_names=1
 
   phpmyadmin:
     container_name: phpMyAdmin
