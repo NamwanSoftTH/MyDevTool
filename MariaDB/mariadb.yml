@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       TZ: Asia/Bangkok
-      MARIADB_ROOT_PASSWORD: ''
+      MARIADB_ROOT_PASSWORD: 'Your_Password'
       MARIADB_ROOT_HOST: '%'
     ports:
       - "3306:3306"
